@@ -1,48 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRAF79 LTD</title>
+    <title>KRAF79 LTD - CNC ENGINEERING</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
         body {
-            background-color: #f4f4f4; /* Jasne tło */
-            text-align: center; /* Wyśrodkowanie tekstu */
-            font-family: Arial, sans-serif;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
         }
-
-        h1 {
-            font-size: 32px;
-            font-weight: bold;
-            font-family: "Comic Sans MS", "Comic Neue", cursive; /* Styl komiksowy */
-            color: #333;
-        }
-
-        h2 {
-            font-size: 32px;
-            font-weight: bold;
-            font-family: "Comic Sans MS", "Comic Neue", cursive; /* Styl komiksowy */
-            background: linear-gradient(90deg, #e5e4e2, #d9d9d9, #bfbfbf);
+        .header {
+            font-size: 52px;
+            font-weight: 900;
+            font-family: 'Chewy', cursive;
+            background: linear-gradient(to right, silver, gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: inline-block;
-            margin-top: 5px;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
         }
-        h3 {
-            font-size: 32px;
-            font-weight: bold;
-            font-family: "Comic Sans MS", "Comic Neue", cursive; /* Styl komiksowy */
-            background: linear-gradient(90deg, #e5e4e2, #d9d9d9, #bfbfbf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 5px;
+        .sub-header {
+            font-size: 30px;
+            color: silver;
+            text-shadow: 0px 0px 10px blue;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image-container img {
+            width: 300px;
+            margin: 20px;
+            border: 3px solid transparent;
+            transition: all 0.5s ease;
+        }
+        .image-container img:hover {
+            border-color: cyan;
+            box-shadow: 0px 0px 20px cyan;
+            transform: scale(1.1);
+        }
+        .gcode-container {
+            position: fixed;
+            right: 20px;
+            top: 50px;
+            width: 200px;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid cyan;
+            padding: 10px;
+            overflow: hidden;
+            font-family: monospace;
+            color: cyan;
+            text-shadow: 0px 0px 5px cyan;
+        }
+        @keyframes scrollGcode {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+        .gcode {
+            animation: scrollGcode 10s linear infinite;
+            white-space: pre-line;
         }
     </style>
 </head>
 <body>
-    <h1>KRAF79 LTD</h1>
-    <h2>CNC ENGINEERING</h2>
-    <h3>Pingwin sie doigrasz zobaczysz</h2>
+    <div class="header">KRAF79 LTD</div>
+    <div class="sub-header">CNC ENGINEERING</div>
+    <div class="image-container">
+        <a href="page1.html"><img src="frezarka.jpg" alt="Frezarka CNC"></a>
+        <a href="page2.html"><img src="tokarka.jpg" alt="Tokarka CNC"></a>
+    </div>
+    <div class="gcode-container">
+        <div class="gcode">
+PINGWIN GLUPIO CI
+G21 G90 G17 G0 Z50
+G0 X0 Y0
+G1 X50 F200
+G3 X100 Y50 R25
+G2 X150 Y100 R50
+G0 Z100
+G21 G90 G17 G0 Z50
+G0 X0 Y0
+G1 X50 F200
+G3 X100 Y50 R25
+G2 X150 Y100 R50
+G0 Z100
+M30
+NIE FIKAJ DO MOPSA
+</div>
+    </div>
 </body>
 </html>
